@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="author" content="Ohimai Daniel">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.3%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+<h2>Our Products and Services</h2>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>We Sell</h2>
+    <p>contact us for the sales<br>
+    of all your electonics</p>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <h2>We Buy</h2>
+    <p>We buy all forms of electronoics, whether working or
+      not. Our price is competitive
+    </p>
+  </div>
+  <div class="column" style="background-color:#aaa;">
+    <h2>We Train</h2>
+    <p>We engage in weekly trainings for all who<br>
+      we care to learn what we do. contact us for the us<br>
+      for more info
+    of all your electonics</p>
+  </div>
+</div>
+
+</body>
+</html>

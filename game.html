@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naira Guessing Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        #game-container {
+            width: 80%;
+            margin: 40px auto;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        input[type="number"] {
+            width: 100%;
+            height: 30px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        
+        button {
+            width: 100%;
+            height: 40px;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #3e8e41;
+        }
+        
+        #result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <h1>Naira Guessing Game</h1>
+        <p id="instructions">Guess the total amount of money within 1 minute. You have 5 chances.</p>
+        <p id="chances">Chances: 5</p>
+        <p id="time">Time: 60 seconds</p>
+        <p id="amount"></p>
+        <input type="number" id="guess" placeholder="Enter your guess">
+        <button id="submit-guess">Submit Guess</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        let chances = 5;
+        let time = 60;
+        let amount = 0;
+        let hundredNairaNotes = Math.floor(Math.random() * 10) + 1;
+        let fiveHundredNairaNotes = Math.floor(Math.random() * 10) + 1;
+        amount = hundredNairaNotes * 100 + fiveHundredNairaNotes * 500;
+
+        document.getElementById('amount').textContent = `You have ${fiveHundredNairaNotes} five hundred Naira notes and ${hundredNairaNotes} one hundred Naira notes.`;
+
+        let intervalId = setInterval(() => {
+            time--;
+            document.getElementById('time').textContent = `Time: ${time} seconds`;
+            if (time === 0) {
+                clearInterval(intervalId);
+                document.getElementById('result').textContent = 'Time Over!';
+                document.getElementById('submit-guess').disabled = true;
+            }
+        }, 1000);
+
+        document.getElementById('submit-guess').addEventListener('click', () => {
+            let guess = parseInt(document.getElementById('guess').value);
+            if (guess === amount) {
+                document.getElementById('result').textContent = 'You Won!';
+                document.getElementById('submit-guess').disabled = true;
+            } else {
+                chances--;
+                document.getElementById('chances').textContent = `Chances: ${chances}`;
+                if (chances === 0) {
+                    document.getElementById('result').textContent = 'Game Over!';
+                    document.getElementById('submit-guess').disabled = true;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

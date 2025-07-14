@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="author" content="Ohimai Daniel">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.3%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+<h2>Ohidans Education Consult</h2>
+<h3 style="color: red;"> ICT School with a Difference!</h3>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>Our Vision</h2>
+    <p>We hope to become the number one ICT School<br>
+      in the whole of Africa, giving our students quality<br>
+      and unparallel ICT education.<br></p>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <h2>Our Misson</h2>
+    <p>To make Coding and Programming the language<br>
+      of every Nigerian
+    </p>
+  </div>
+  <div class="column" style="background-color:#aaa;">
+    <h2>The Testimonies</h2>
+    <p>"Ohidans Education Consult is an ICT school<br>
+      with a Difference. They over-simplify coding for even the<br>
+      worst of brain",Amos Njika.<br></p>
+  </div>
+</div>
+
+</body>
+</html>
